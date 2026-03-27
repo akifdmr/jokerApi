@@ -1,0 +1,112 @@
+{
+  "banks": [
+    {
+      "id": "bank-1772256494400-362",
+      "name": "BANK OF AMERİCA",
+      "country": "USA",
+      "createdAt": "2026-02-28T05:28:14.400Z",
+      "updatedAt": "2026-02-28T05:28:14.400Z"
+    },
+    {
+      "id": "bank-1772256524168-215",
+      "name": "CHASE",
+      "country": "USA",
+      "createdAt": "2026-02-28T05:28:44.168Z",
+      "updatedAt": "2026-02-28T05:28:44.168Z"
+    },
+    {
+      "id": "bank-us-boa",
+      "name": "Bank of America",
+      "swift": "BOFAUS3N",
+      "country": "US",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "bank-us-chase",
+      "name": "JPMorgan Chase Bank",
+      "swift": "CHASUS33",
+      "country": "US",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "bank-us-wf",
+      "name": "Wells Fargo Bank",
+      "swift": "WFBIUS6S",
+      "country": "US",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "bank-us-citi",
+      "name": "Citibank N.A.",
+      "swift": "CITIUS33",
+      "country": "US",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "bank-us-usbank",
+      "name": "U.S. Bank",
+      "swift": "USBKUS44",
+      "country": "US",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "bank-1773398055795-180",
+      "name": "East West Bank",
+      "country": "US",
+      "createdAt": "2026-03-13T10:34:15.795Z",
+      "updatedAt": "2026-03-13T10:34:15.795Z"
+    },
+    {
+      "id": "bank-1773398190269-164",
+      "name": "HSBC",
+      "country": "DE",
+      "createdAt": "2026-03-13T10:36:30.269Z",
+      "updatedAt": "2026-03-13T10:36:30.269Z"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-system-admin",
+      "firstName": "System",
+      "lastName": "Admin",
+      "createdAt": "2026-02-28T06:51:41.943Z",
+      "updatedAt": "2026-02-28T06:51:41.943Z"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-1772265168908-588",
+      "cardNumber": "4111111111111111",
+      "expiryMonth": "12",
+      "expiryYear": "2028",
+      "cvv": "123",
+      "address": "1 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10001",
+      "holderPersonId": "person-system-admin",
+      "bankId": "bank-us-boa",
+      "createdAt": "2026-02-28T07:52:48.908Z",
+      "updatedAt": "2026-02-28T07:52:48.908Z"
+    }
+  ],
+  "accounts": [],
+  "topups": [],
+  "cardTemplates": [],
+  "systemUsers": [
+    {
+      "id": "sys-user-admin",
+      "personId": "person-system-admin",
+      "username": "admin",
+      "passwordHash": "$2b$10$wLlo8G.baxcjiyRW5vFALOiOrf8ARjXzNJEvdp2C2t37d1iGrlse2",
+      "isSystem": true,
+      "createdAt": "2026-02-28T06:51:41.943Z",
+      "updatedAt": "2026-02-28T06:51:41.943Z"
+    }
+  ]
+}

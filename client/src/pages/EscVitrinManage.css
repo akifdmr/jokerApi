@@ -1,0 +1,183 @@
+.esc-manage {
+  display: grid;
+  gap: 18px;
+}
+
+.esc-manage-hero {
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(143, 198, 255, 0.13), rgba(255, 155, 207, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.esc-manage-hero h1 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.esc-manage-hero p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.esc-manage-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(10, 12, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.esc-manage-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.esc-manage-form input,
+.esc-manage-form select {
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.esc-manage-form button {
+  align-self: end;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.esc-manage-form button[type="button"] {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.esc-manage-error {
+  color: #ff9f9f;
+  font-weight: 700;
+}
+
+.esc-manage-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(10, 12, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.esc-manage-table th,
+.esc-manage-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.82);
+  vertical-align: top;
+}
+
+.esc-manage-table th {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.esc-manage-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.esc-manage-actions button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.esc-manage-danger {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 120, 120, 0.25);
+  background: rgba(255, 120, 120, 0.08);
+  color: rgba(255, 210, 210, 0.95);
+  cursor: pointer;
+}
+
+.esc-manage-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;
+  word-break: break-all;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.esc-manage-preview-row td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.esc-manage-preview {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.esc-manage-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.esc-manage-preview-title {
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.esc-manage-preview-sub {
+  margin-top: 2px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.esc-manage-preview-link {
+  color: rgba(143, 198, 255, 0.95);
+  text-decoration: none;
+}
+
+.esc-manage-preview-link:hover {
+  text-decoration: underline;
+}
+
+.esc-manage-preview-head button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.esc-manage-preview-body {
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(10, 12, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px;
+}
+
+.esc-manage-preview-frame {
+  display: block;
+  border: 0;
+  max-width: 100%;
+}

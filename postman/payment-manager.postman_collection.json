@@ -1,0 +1,707 @@
+{
+  "info": {
+    "name": "Payment Manager API",
+    "description": "Local API collection for paymentManager project.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:1453"
+    },
+    {
+      "key": "apiToken",
+      "value": "MY_SECRET_TOKEN"
+    },
+    {
+      "key": "bankId",
+      "value": ""
+    },
+    {
+      "key": "personId",
+      "value": ""
+    },
+    {
+      "key": "cardId",
+      "value": ""
+    },
+    {
+      "key": "accountId",
+      "value": ""
+    },
+    {
+      "key": "topupId",
+      "value": ""
+    },
+    {
+      "key": "runId",
+      "value": ""
+    },
+    {
+      "key": "transactionId",
+      "value": ""
+    },
+    {
+      "key": "escItemId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Health",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/health"
+          }
+        },
+        {
+          "name": "Live Swipe",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/live-swipe"
+          }
+        },
+        {
+          "name": "MSR Start",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/msr/start"
+          }
+        },
+        {
+          "name": "MSR Stream",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/msr/stream"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "item": [
+        {
+          "name": "Dashboard",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/finance/dashboard"
+          }
+        },
+        {
+          "name": "Assets",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/finance/assets"
+          }
+        },
+        {
+          "name": "Customers",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/finance/customers"
+          }
+        },
+        {
+          "name": "Partners",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/finance/partners"
+          }
+        },
+        {
+          "name": "Accounts",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/finance/accounts"
+          }
+        },
+        {
+          "name": "Transactions",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/finance/transactions"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Master Data",
+      "item": [
+        {
+          "name": "Constants",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/master/constants"
+          }
+        },
+        {
+          "name": "All",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/master/all"
+          }
+        },
+        {
+          "name": "Add Bank",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.item?.id) pm.collectionVariables.set('bankId', json.item.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"JPMorgan Chase\",\n  \"swift\": \"CHASUS33\",\n  \"country\": \"US\"\n}"
+            },
+            "url": "{{baseUrl}}/api/master/banks"
+          }
+        },
+        {
+          "name": "Add Person",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.item?.id) pm.collectionVariables.set('personId', json.item.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+12025550123\",\n  \"address\": \"350 5th Ave\",\n  \"city\": \"New York\",\n  \"state\": \"NY\",\n  \"zip\": \"10118\"\n}"
+            },
+            "url": "{{baseUrl}}/api/master/people"
+          }
+        },
+        {
+          "name": "Add Card Template",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"templateName\": \"NY Generic\",\n  \"bankId\": \"{{bankId}}\",\n  \"address\": \"350 5th Ave\",\n  \"city\": \"New York\",\n  \"state\": \"NY\",\n  \"zip\": \"10118\"\n}"
+            },
+            "url": "{{baseUrl}}/api/master/card-templates"
+          }
+        },
+        {
+          "name": "Add Card",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.item?.id) pm.collectionVariables.set('cardId', json.item.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cardNumber\": \"4111111111111111\",\n  \"expiryMonth\": \"12\",\n  \"expiryYear\": \"2030\",\n  \"cvv\": \"123\",\n  \"address\": \"350 5th Ave\",\n  \"city\": \"New York\",\n  \"state\": \"NY\",\n  \"zip\": \"10118\",\n  \"holderPersonId\": \"{{personId}}\",\n  \"bankId\": \"{{bankId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/master/cards"
+          }
+        },
+        {
+          "name": "Add Account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.item?.id) pm.collectionVariables.set('accountId', json.item.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bankId\": \"{{bankId}}\",\n  \"accountOwnership\": \"business\",\n  \"accountType\": \"checking\",\n  \"balance\": 50000,\n  \"companyName\": \"Atlas Trading LLC\",\n  \"address\": \"350 5th Ave, New York, NY\",\n  \"contactInfo\": \"+1 212 555 0101\"\n}"
+            },
+            "url": "{{baseUrl}}/api/master/accounts"
+          }
+        },
+        {
+          "name": "Add Topup",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.item?.id) pm.collectionVariables.set('topupId', json.item.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cardId\": \"{{cardId}}\",\n  \"accountId\": \"{{accountId}}\",\n  \"loadedAmount\": 1000,\n  \"totalAmount\": 1000,\n  \"status\": \"success\",\n  \"commissionRate\": 2.5\n}"
+            },
+            "url": "{{baseUrl}}/api/master/topups"
+          }
+        },
+        {
+          "name": "Add Topup Note",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"note\": \"First topup confirmed\"\n}"
+            },
+            "url": "{{baseUrl}}/api/master/topups/{{topupId}}/notes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NMI Card Ops",
+      "item": [
+        {
+          "name": "BIN Check",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pan\": \"4111111111111111\",\n  \"processor\": \"nmi\"\n}"
+            },
+            "url": "{{baseUrl}}/api/nmi/bin-check"
+          }
+        },
+        {
+          "name": "Balance Check",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pan\": \"4111111111111111\",\n  \"expMonth\": \"12\",\n  \"expYear\": \"2030\",\n  \"cvv\": \"123\",\n  \"processor\": \"nmi\"\n}"
+            },
+            "url": "{{baseUrl}}/api/nmi/balance-check"
+          }
+        },
+        {
+          "name": "Provision",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "const id = json?.transactionId || json?.data?.transactionId;",
+                  "if (id) pm.collectionVariables.set('transactionId', String(id));"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pan\": \"4111111111111111\",\n  \"expMonth\": \"12\",\n  \"expYear\": \"2030\",\n  \"cvv\": \"123\",\n  \"amount\": 25,\n  \"currency\": \"USD\",\n  \"orderId\": \"ORD-1001\",\n  \"processor\": \"nmi\"\n}"
+            },
+            "url": "{{baseUrl}}/api/nmi/provision"
+          }
+        },
+        {
+          "name": "Provision Completion",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transactionId\": \"{{transactionId}}\",\n  \"amount\": 25,\n  \"processor\": \"nmi\"\n}"
+            },
+            "url": "{{baseUrl}}/api/nmi/provision-completion"
+          }
+        },
+        {
+          "name": "Cancel Provision",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transactionId\": \"{{transactionId}}\",\n  \"processor\": \"nmi\"\n}"
+            },
+            "url": "{{baseUrl}}/api/nmi/cancel"
+          }
+        },
+        {
+          "name": "Transactions",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/nmi/transactions"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Balance Checker",
+      "item": [
+        {
+          "name": "Start Run",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.run?.id) pm.collectionVariables.set('runId', json.run.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cardId\": \"{{cardId}}\",\n  \"processor\": \"nmi\",\n  \"initialAmount\": 2500,\n  \"maxRequests\": 8\n}"
+            },
+            "url": "{{baseUrl}}/api/balance-checker/runs"
+          }
+        },
+        {
+          "name": "List Runs",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/balance-checker/runs"
+          }
+        },
+        {
+          "name": "Get Run",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/balance-checker/runs/{{runId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Onramp",
+      "item": [
+        {
+          "name": "Constants",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/onramp/constants"
+          }
+        },
+        {
+          "name": "Quote",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMethod\": \"card\",\n  \"asset\": \"BTC\",\n  \"fiatAmount\": 150\n}"
+            },
+            "url": "{{baseUrl}}/api/onramp/quote"
+          }
+        },
+        {
+          "name": "Create Order (Card by Source Card)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMethod\": \"card\",\n  \"asset\": \"BTC\",\n  \"fiatCurrency\": \"USD\",\n  \"fiatAmount\": 150,\n  \"walletAddress\": \"bc1qexamplewalletaddress0000\",\n  \"sourceCardId\": \"{{cardId}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/onramp/orders"
+          }
+        },
+        {
+          "name": "Create Order (ACH)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMethod\": \"ach\",\n  \"asset\": \"USDT\",\n  \"fiatCurrency\": \"USD\",\n  \"fiatAmount\": 250,\n  \"walletAddress\": \"TExampleWalletAddress111111111111\",\n  \"paymentDetails\": {\n    \"accountHolderName\": \"John Doe\",\n    \"routingNumber\": \"021000021\",\n    \"accountNumber\": \"1234567890\",\n    \"accountType\": \"checking\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/onramp/orders"
+          }
+        },
+        {
+          "name": "Create Order (SEPA)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMethod\": \"sepa\",\n  \"asset\": \"ETH\",\n  \"fiatCurrency\": \"EUR\",\n  \"fiatAmount\": 300,\n  \"walletAddress\": \"0x1234567890abcdef1234567890abcdef12345678\",\n  \"paymentDetails\": {\n    \"accountHolderName\": \"John Doe\",\n    \"iban\": \"DE89370400440532013000\",\n    \"bic\": \"COBADEFFXXX\",\n    \"countryCode\": \"DE\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/onramp/orders"
+          }
+        },
+        {
+          "name": "List Orders",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/onramp/orders"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ESC Vitrin",
+      "item": [
+        {
+          "name": "List Items",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/esc-vitrin/items"
+          }
+        },
+        {
+          "name": "Add Item",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json?.item?.id) pm.collectionVariables.set('escItemId', json.item.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"header\": \"Tip Box (New)\",\n  \"type\": \"tipbox\",\n  \"content\": \"https://iwantclips.com/model/promotional_tool/view_banner_custom/1918149/25/200/500/1000/1250/2500\"\n}"
+            },
+            "url": "{{baseUrl}}/api/esc-vitrin/items"
+          }
+        },
+        {
+          "name": "Delete Item",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/esc-vitrin/items/{{escItemId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "VPOS",
+      "item": [
+        {
+          "name": "Preauth",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"V-1001\",\n  \"amount\": 100,\n  \"card\": {\n    \"pan\": \"4111111111111111\",\n    \"expiry\": \"3012\",\n    \"cvv\": \"123\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/preauth"
+          }
+        },
+        {
+          "name": "Sale",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"V-1002\",\n  \"amount\": 75,\n  \"card\": {\n    \"pan\": \"4111111111111111\",\n    \"expiry\": \"3012\",\n    \"cvv\": \"123\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/sale"
+          }
+        },
+        {
+          "name": "Void",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"V-1002\",\n  \"amount\": 75\n}"
+            },
+            "url": "{{baseUrl}}/api/void"
+          }
+        },
+        {
+          "name": "Transactions",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/transactions?startDate=20260101&endDate=20260131"
+          }
+        }
+      ]
+    }
+  ]
+}

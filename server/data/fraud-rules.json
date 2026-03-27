@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "updatedAt": "2026-03-10T00:00:00.000Z",
+  "profiles": {
+    "default": {
+      "id": "default",
+      "rules": [
+        {
+          "id": "reject-high-amount",
+          "enabled": true,
+          "action": "review",
+          "criteria": {
+            "amountGte": 1500
+          },
+          "reason": "High amount requires review"
+        },
+        {
+          "id": "require-3ds-mid-amount",
+          "enabled": true,
+          "action": "require_3ds",
+          "criteria": {
+            "paymentMethodIn": [
+              "card"
+            ],
+            "amountGte": 200
+          },
+          "reason": "3DS required for mid/high card amounts"
+        },
+        {
+          "id": "reject-prepaid-by-default",
+          "enabled": true,
+          "action": "review",
+          "criteria": {
+            "paymentMethodIn": [
+              "card"
+            ],
+            "cardPrepaid": true
+          },
+          "reason": "Prepaid/virtual-like products require review"
+        }
+      ]
+    },
+    "mcc_7011": {
+      "id": "mcc_7011",
+      "rules": [
+        {
+          "id": "7011-require-3ds",
+          "enabled": true,
+          "action": "require_3ds",
+          "criteria": {
+            "paymentMethodIn": [
+              "card"
+            ],
+            "amountGte": 50
+          },
+          "reason": "Stricter profile requires 3DS for cards"
+        },
+        {
+          "id": "7011-review-prepaid",
+          "enabled": true,
+          "action": "review",
+          "criteria": {
+            "paymentMethodIn": [
+              "card"
+            ],
+            "cardPrepaid": true
+          },
+          "reason": "Prepaid/virtual-like products require manual review"
+        },
+        {
+          "id": "7011-review-high-amount",
+          "enabled": true,
+          "action": "review",
+          "criteria": {
+            "amountGte": 500
+          },
+          "reason": "High amount requires manual review in this profile"
+        }
+      ]
+    }
+  }
+}

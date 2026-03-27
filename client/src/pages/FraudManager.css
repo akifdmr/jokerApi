@@ -1,0 +1,142 @@
+.fraud-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fraud-hero h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.fraud-hero p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fraud-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.fraud-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.fraud-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.fraud-panel-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.fraud-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.fraud-primary {
+  background: #2f7dff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.fraud-json {
+  width: 100%;
+  min-height: 520px;
+  resize: vertical;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+}
+
+.fraud-hint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.fraud-table-wrap {
+  overflow: auto;
+  max-height: 620px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fraud-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.fraud-table th,
+.fraud-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.fraud-table th {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.fraud-empty {
+  padding: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fraud-error {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 100, 100, 0.25);
+  background: rgba(255, 60, 60, 0.12);
+  color: rgba(255, 200, 200, 0.95);
+  font-weight: 700;
+}
+
+.fraud-ok {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 255, 160, 0.22);
+  background: rgba(40, 255, 140, 0.08);
+  color: rgba(210, 255, 230, 0.95);
+  font-weight: 700;
+}
+
+.fraud-note {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1100px) {
+  .fraud-grid {
+    grid-template-columns: 1fr;
+  }
+  .fraud-json {
+    min-height: 380px;
+  }
+}
+

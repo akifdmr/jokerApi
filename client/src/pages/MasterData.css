@@ -1,0 +1,83 @@
+.master-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.master-page h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.master-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+  background: #0f1a2f;
+  border: 1px solid rgba(128, 166, 228, 0.2);
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+
+.master-form label {
+  display: grid;
+  gap: 0.3rem;
+  color: #bdd1ee;
+  font-size: 0.82rem;
+}
+
+.master-form input,
+.master-form select {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #2b4264;
+  background: #152542;
+  color: #fff;
+  padding: 0 0.6rem;
+}
+
+.master-form button {
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: #1a64d8;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.master-table-wrap {
+  overflow: auto;
+  background: #0f1a2f;
+  border: 1px solid rgba(128, 166, 228, 0.2);
+  border-radius: 14px;
+}
+
+.master-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #d5e3fb;
+}
+
+.master-table th,
+.master-table td {
+  border-bottom: 1px solid #1f314c;
+  padding: 0.6rem;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.master-table th {
+  color: #9db8db;
+}
+
+.master-error {
+  color: #ff9f9f;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .master-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}

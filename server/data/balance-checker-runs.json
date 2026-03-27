@@ -1,0 +1,108 @@
+{
+  "headers": [
+    {
+      "id": "bal-run-1772265246129-155",
+      "cardId": "card-1772265168908-588",
+      "processor": "nmi",
+      "status": "completed",
+      "initialAmount": 2500,
+      "totalApprovedLimit": 80000,
+      "requestCount": 6,
+      "approvedCount": 6,
+      "createdAt": "2026-02-28T07:54:06.129Z",
+      "updatedAt": "2026-02-28T07:54:31.156Z"
+    }
+  ],
+  "details": [
+    {
+      "id": "bal-det-1772265246132-293",
+      "runId": "bal-run-1772265246129-155",
+      "stepNo": 1,
+      "level": "success",
+      "attemptedAmount": 2500,
+      "outcome": "approved",
+      "addedAmount": 2500,
+      "cumulativeApproved": 2500,
+      "transactionId": "NMI-PRV-1772265246130-811",
+      "message": "[1] APPROVED 2500 USD | accepted-total=2500",
+      "createdAt": "2026-02-28T07:54:06.132Z"
+    },
+    {
+      "id": "bal-det-1772265251137-739",
+      "runId": "bal-run-1772265246129-155",
+      "stepNo": 2,
+      "level": "success",
+      "attemptedAmount": 5000,
+      "outcome": "approved",
+      "addedAmount": 5000,
+      "cumulativeApproved": 7500,
+      "transactionId": "NMI-PRV-1772265251134-759",
+      "message": "[2] APPROVED 5000 USD | accepted-total=7500",
+      "createdAt": "2026-02-28T07:54:11.137Z"
+    },
+    {
+      "id": "bal-det-1772265256141-204",
+      "runId": "bal-run-1772265246129-155",
+      "stepNo": 3,
+      "level": "success",
+      "attemptedAmount": 10000,
+      "outcome": "approved",
+      "addedAmount": 10000,
+      "cumulativeApproved": 17500,
+      "transactionId": "NMI-PRV-1772265256139-715",
+      "message": "[3] APPROVED 10000 USD | accepted-total=17500",
+      "createdAt": "2026-02-28T07:54:16.141Z"
+    },
+    {
+      "id": "bal-det-1772265261146-988",
+      "runId": "bal-run-1772265246129-155",
+      "stepNo": 4,
+      "level": "success",
+      "attemptedAmount": 20000,
+      "outcome": "approved",
+      "addedAmount": 20000,
+      "cumulativeApproved": 37500,
+      "transactionId": "NMI-PRV-1772265261144-834",
+      "message": "[4] APPROVED 20000 USD | accepted-total=37500",
+      "createdAt": "2026-02-28T07:54:21.146Z"
+    },
+    {
+      "id": "bal-det-1772265266149-421",
+      "runId": "bal-run-1772265246129-155",
+      "stepNo": 5,
+      "level": "success",
+      "attemptedAmount": 40000,
+      "outcome": "approved",
+      "addedAmount": 40000,
+      "cumulativeApproved": 77500,
+      "transactionId": "NMI-PRV-1772265266148-743",
+      "message": "[5] APPROVED 40000 USD | accepted-total=77500",
+      "createdAt": "2026-02-28T07:54:26.149Z"
+    },
+    {
+      "id": "bal-det-1772265271153-752",
+      "runId": "bal-run-1772265246129-155",
+      "stepNo": 6,
+      "level": "success",
+      "attemptedAmount": 80000,
+      "outcome": "approved",
+      "addedAmount": 80000,
+      "cumulativeApproved": 157500,
+      "transactionId": "NMI-PRV-1772265271151-734",
+      "message": "[6] APPROVED 80000 USD | accepted-total=157500",
+      "createdAt": "2026-02-28T07:54:31.153Z"
+    },
+    {
+      "id": "bal-det-1772265271154-544",
+      "runId": "bal-run-1772265246129-155",
+      "stepNo": 7,
+      "level": "info",
+      "attemptedAmount": 0,
+      "outcome": "approved",
+      "addedAmount": 0,
+      "cumulativeApproved": 157500,
+      "message": "[SUMMARY] estimated-nearest-limit=80000 USD | requests=6",
+      "createdAt": "2026-02-28T07:54:31.154Z"
+    }
+  ]
+}

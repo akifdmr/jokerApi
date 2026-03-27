@@ -1,0 +1,112 @@
+.sepa-page {
+  display: grid;
+  gap: 16px;
+}
+
+.sepa-hero h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.sepa-hero p {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sepa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sepa-panel {
+  background: #0f1a2f;
+  border: 1px solid rgba(127, 169, 233, 0.2);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.sepa-panel h3 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.sepa-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.sepa-form.wide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sepa-form label {
+  display: grid;
+  gap: 6px;
+  color: #bdd3ef;
+  font-size: 0.82rem;
+}
+
+.sepa-form input,
+.sepa-form select {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #2a4163;
+  background: #152542;
+  color: #fff;
+  padding: 0 0.6rem;
+}
+
+.sepa-form button {
+  height: 40px;
+  border-radius: 8px;
+  border: 0;
+  background: #1b66de;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: end;
+}
+
+.sepa-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #d6e4fb;
+  font-size: 0.82rem;
+}
+
+.sepa-table th,
+.sepa-table td {
+  border-bottom: 1px solid #213654;
+  padding: 8px;
+  text-align: left;
+}
+
+.sepa-error {
+  color: #ff9f9f;
+  font-weight: 700;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.muted {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ok {
+  color: #8dffb3;
+}
+
+@media (max-width: 1100px) {
+  .sepa-grid {
+    grid-template-columns: 1fr;
+  }
+  .sepa-form.wide {
+    grid-template-columns: 1fr;
+  }
+}
+

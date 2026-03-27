@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "id": "esc-tipbox-default",
+      "header": "Tip Box",
+      "type": "tipbox",
+      "content": "https://iwantclips.com/model/promotional_tool/view_banner_custom/1918149/25/200/500/1000/1250/2500",
+      "createdAt": "2026-03-03T00:00:00.000Z",
+      "updatedAt": "2026-03-03T00:00:00.000Z"
+    },
+    {
+      "id": "esc-tipbox-1918149-100-5000",
+      "header": "Tip Box (100–5000)",
+      "type": "tipbox",
+      "content": "https://iwantclips.com/model/promotional_tool/view_banner_custom/1918149/100/250/500/1000/2500/5000",
+      "width": 250,
+      "height": 150,
+      "createdAt": "2026-03-03T00:00:00.000Z",
+      "updatedAt": "2026-03-03T00:00:00.000Z"
+    },
+    {
+      "id": "esc-content-default",
+      "header": "Content Widget",
+      "type": "content_widget",
+      "content": "https://iwantclips.com/content_widget/widget_js/1918149",
+      "createdAt": "2026-03-03T00:00:00.000Z",
+      "updatedAt": "2026-03-03T00:00:00.000Z"
+    },
+    {
+      "id": "esc-button-6210276",
+      "header": "Promo Button 6210276",
+      "type": "iframe",
+      "content": "https://iwantclips.com/model/promotional_tool/view_button_ext/6210276",
+      "width": 150,
+      "height": 35,
+      "createdAt": "2026-03-03T00:00:00.000Z",
+      "updatedAt": "2026-03-03T00:00:00.000Z"
+    },
+    {
+      "id": "esc-button-6210258",
+      "header": "Promo Button 6210258",
+      "type": "iframe",
+      "content": "https://iwantclips.com/model/promotional_tool/view_button_ext/6210258",
+      "width": 150,
+      "height": 35,
+      "createdAt": "2026-03-03T00:00:00.000Z",
+      "updatedAt": "2026-03-03T00:00:00.000Z"
+    },
+    {
+      "id": "esc-button-6210252",
+      "header": "Promo Button 6210252",
+      "type": "iframe",
+      "content": "https://iwantclips.com/model/promotional_tool/view_button_ext/6210252",
+      "width": 150,
+      "height": 35,
+      "createdAt": "2026-03-03T00:00:00.000Z",
+      "updatedAt": "2026-03-03T00:00:00.000Z"
+    },
+    {
+      "id": "esc-button-6210210",
+      "header": "Promo Button 6210210",
+      "type": "iframe",
+      "content": "https://iwantclips.com/model/promotional_tool/view_button_ext/6210210",
+      "width": 150,
+      "height": 35,
+      "createdAt": "2026-03-03T00:00:00.000Z",
+      "updatedAt": "2026-03-03T00:00:00.000Z"
+    }
+  ]
+}

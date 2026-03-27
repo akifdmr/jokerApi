@@ -1,0 +1,65 @@
+import { FinanceDatasetModel } from "../models/FinanceDataset.model.js";
+
+const DEFAULT_DATASETS = [
+  {
+    resource: "dashboard",
+    items: [
+      { key: "dailyVolume", label: "Daily Volume", value: 126400, currency: "USD" },
+      { key: "settlementRate", label: "Settlement Rate", value: 98.6, unit: "%" },
+      { key: "riskAlerts", label: "Risk Alerts", value: 4, unit: "open" },
+      { key: "activeAccounts", label: "Active Accounts", value: 18, unit: "accounts" },
+    ],
+  },
+  {
+    resource: "assets",
+    items: [
+      { code: "AST-001", name: "Corporate Card Pool", status: "active", owner: "Treasury" },
+      { code: "AST-002", name: "FX Reserve Wallet", status: "active", owner: "Finance Ops" },
+      { code: "AST-003", name: "Chargeback Buffer", status: "watchlist", owner: "Risk Desk" },
+    ],
+  },
+  {
+    resource: "customers",
+    items: [
+      { customerId: "C-1001", fullName: "Atlas Trading LLC", segment: "Enterprise", riskScore: 12 },
+      { customerId: "C-1002", fullName: "NorthBridge Retail", segment: "SMB", riskScore: 29 },
+      { customerId: "C-1003", fullName: "Mera Logistics", segment: "Mid-Market", riskScore: 21 },
+    ],
+  },
+  {
+    resource: "partners",
+    items: [
+      { partnerId: "P-01", name: "Vakifbank", channel: "VPOS", commissionPct: 1.45 },
+      { partnerId: "P-02", name: "Stripe", channel: "Gateway", commissionPct: 2.1 },
+      { partnerId: "P-03", name: "Adyen", channel: "Gateway", commissionPct: 1.95 },
+    ],
+  },
+  {
+    resource: "accounts",
+    items: [
+      { iban: "TR00 0000 0000 0000 0000 0001", bank: "Vakifbank", currency: "TRY", balance: 845220.31 },
+      { iban: "TR00 0000 0000 0000 0000 0002", bank: "Garanti BBVA", currency: "USD", balance: 214332.87 },
+      { iban: "TR00 0000 0000 0000 0000 0003", bank: "Yapi Kredi", currency: "EUR", balance: 96840.54 },
+    ],
+  },
+  {
+    resource: "transactions",
+    items: [
+      { txId: "TX-7781", amount: 1499.5, currency: "USD", status: "approved", provider: "Stripe" },
+      { txId: "TX-7782", amount: 525.0, currency: "USD", status: "pending", provider: "Vakifbank" },
+      { txId: "TX-7783", amount: 7620.2, currency: "TRY", status: "declined", provider: "Adyen" },
+    ],
+  },
+];
+
+export const seedFinanceDatasets = async () => {
+  for (const dataset of DEFAULT_DATASETS) {
+    await FinanceDatasetModel.updateOne(
+      { resource: dataset.resource },
+      { $setOnInsert: { items: dataset.items } },
+      { upsert: true }
+    );
+  }
+
+  console.log("📊 Finance datasets seeded");
+};

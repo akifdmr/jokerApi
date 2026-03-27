@@ -1,0 +1,164 @@
+.onramp-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.onramp-page h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.onramp-note {
+  margin: 0;
+  color: #9fc0ea;
+}
+
+.onramp-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+}
+
+.onramp-panel {
+  background: #0f1a2f;
+  border: 1px solid rgba(127, 169, 233, 0.2);
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+
+.onramp-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.onramp-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: #bdd3ef;
+}
+
+.onramp-form input,
+.onramp-form select,
+.onramp-form button {
+  height: 40px;
+  border-radius: 8px;
+}
+
+.onramp-form input,
+.onramp-form select {
+  border: 1px solid #2a4163;
+  background: #152542;
+  color: #fff;
+  padding: 0 0.6rem;
+}
+
+.onramp-form button {
+  border: 0;
+  background: #1b66de;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.onramp-kv {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.onramp-kv div {
+  background: #13223c;
+  border: 1px solid rgba(127, 169, 233, 0.2);
+  border-radius: 8px;
+  padding: 0.55rem;
+  color: #d6e4fb;
+  font-size: 0.82rem;
+}
+
+.onramp-table-wrap {
+  overflow: auto;
+}
+
+.onramp-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #d6e4fb;
+}
+
+.onramp-table th,
+.onramp-table td {
+  border-bottom: 1px solid #213654;
+  padding: 0.55rem;
+  text-align: left;
+  font-size: 0.82rem;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.onramp-error {
+  color: #ff9f9f;
+  font-weight: 700;
+}
+
+.bt-section {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid rgba(127, 169, 233, 0.2);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.bt-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 10px;
+}
+
+.bt-field {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #2a4163;
+  background: #152542;
+  color: #fff;
+}
+
+.bt-challenge {
+  margin-top: 10px;
+}
+
+.bt-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bt-error {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ff9f9f;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .bt-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  .onramp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .onramp-form {
+    grid-template-columns: 1fr;
+  }
+}

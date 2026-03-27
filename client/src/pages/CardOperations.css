@@ -1,0 +1,48 @@
+.card-ops-home {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-ops-home h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.card-ops-home p {
+  margin: 0.3rem 0 0;
+  color: #9fbbdf;
+}
+
+.card-ops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.card-ops-tile {
+  text-align: left;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(119, 156, 220, 0.24);
+  background: linear-gradient(180deg, #0f1f37, #112845);
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-ops-tile h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-ops-tile p {
+  margin: 0.5rem 0 0;
+  color: #aac4e9;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 960px) {
+  .card-ops-grid {
+    grid-template-columns: 1fr;
+  }
+}

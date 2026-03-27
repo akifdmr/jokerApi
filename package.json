@@ -1,34 +1,9 @@
 {
-  "name": "balancechecker-monorepo",
-  "private": "true",
-  "workspaces": [
-    "client",
-    "server"
-  ],
+  "name": "payment-manager",
+  "private": true,
   "scripts": {
-    "dev": "npm run dev:server & npm run dev:client",
-    "dev:server": "cd server && npm run dev",
-    "dev:client": "cd client && npm run dev"
-  },
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "mongoose": "^8.20.0",
-    "nodemon": "^3.1.11",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
-  },
-  "devDependencies": {
-    "@types/axios": "^0.9.36",
-    "@types/react": "^19.2.6",
-    "vite": "^7.2.2"
+    "dev": "node scripts/dev-manager.mjs",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client"
   }
 }
